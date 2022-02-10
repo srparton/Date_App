@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Date App</string>
+    <string name="show_date">Show Date</string>
 </resources>

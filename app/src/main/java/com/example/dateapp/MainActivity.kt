@@ -1,10 +1,9 @@
 package com.example.dateapp
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.TextView
+import android.widget.*
 import java.util.*
 
 /*
@@ -20,26 +19,51 @@ import java.util.*
  */
 
 class MainActivity : AppCompatActivity() {
+    var dateAmount = 0 //how many dates used
+    var datesArray = arrayOfNulls<String>(3)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-                var datePicker = findViewById<DatePicker>(R.id.datePicker1)
-        var txv = findViewById<TextView>(R.id.textView1)
-        var btnGet = findViewById<Button>(R.id.button1)
-        var yy:Int = 0
-        var mm:Int = 0
-        var dd:Int = 0
-        val calendar:Calendar = Calendar.getInstance()
-        datePicker.init(calendar[Calendar.YEAR],
-        calendar[Calendar.MONTH],
-        calendar[Calendar.DAY_OF_MONTH]){
-            datePicker, year, month, dayOnMonth ->
-                yy = year
-                mm = month + 1
-                dd = dayOnMonth
+        val pad = findViewById<Button>(R.id.pickADate)
+        val show = findViewById<Button>(R.id.show)
+
+        pad.setOnClickListener {
+            if (dateAmount >= 3) {
+                Toast.makeText(this, "Already Picked 3 dates",Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            var remSting =(2 - dateAmount).toString() +  " Remaining clicks" // may not be correct amount
+            Toast.makeText(this,remSting,Toast.LENGTH_SHORT).show()
+            val cald = Calendar.getInstance()
+            val year = cald.get(Calendar.YEAR)
+            val month = cald.get(Calendar.MONTH)
+            val day = cald.get(Calendar.DAY_OF_MONTH)
+
+            val datePicker = DatePickerDialog(this,
+                {view, year,monthOfYear, dayOfMonth -> savePick(year, monthOfYear,dayOfMonth)},
+                year,
+                month,
+                day
+            )
+            datePicker.show()
         }
-        btnGet.setOnClickListener(){
-            txv.text = "Selected Date:" + mm + "/" + dd + "/" + yy
+        show.setOnClickListener{
+            var i = 0
+            val a1 = findViewById<TextView>(R.id.activity1Date)
+            val a2 = findViewById<TextView>(R.id.activity2Date)
+            val a3 = findViewById<TextView>(R.id.activity3Date)
+            a1.text = datesArray[0]
+            a2.text = datesArray[1]
+            a3.text = datesArray[2]
         }
+    }
+    private fun savePick(yy: Int, mm: Int, dd: Int){
+        var d = Date()
+        if (dateAmount >=3)
+            return
+        datesArray[dateAmount] = "Year ->" + yy + "Month-> " + mm + "Day ->" + dd
+        dateAmount += 1
+        return
     }
 }

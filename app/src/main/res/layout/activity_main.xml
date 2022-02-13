@@ -11,18 +11,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_gravity="center_horizontal"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Pick A Date" />
+        android:text="Pick Date" />
 
     <Button
         android:id="@+id/show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="40dp"
         android:layout_gravity="center_horizontal"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pickADate"
@@ -32,19 +32,18 @@
         android:id="@+id/activity1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:text="Activity 1"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/pickADate"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="@id/pickADate"/>
 
     <TextView
         android:id="@+id/activity1Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="4dp"
         android:text=""
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/pickADate"
@@ -55,18 +54,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
         android:text="Activity 2"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/activity1"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="@id/pickADate"/>
 
     <TextView
         android:id="@+id/activity2Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="4dp"
         android:text=""
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/activity1"
@@ -77,18 +75,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
         android:text="Activity 2"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/activity2"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="@id/pickADate"/>
 
     <TextView
         android:id="@+id/activity3Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="4dp"
         android:text=""
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/activity2"

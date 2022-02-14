@@ -13,7 +13,10 @@ import java.util.*
             format.
    Work: Spencer - Created project, added logic for finding DayOfWeek, padded
          date and formatted layout.
-         Braxton -
+
+         Braxton - Created the date pickers, implemented logic to only submit 3 dates.
+                   Added the toast messages.
+
    Learning: Spencer - In this project I learned more about API requirements. Some
                        of the more modern methods of finding the date or the day of
                        the week were not supported. IE LocalDate class. I also learned
@@ -21,7 +24,14 @@ import java.util.*
                        as I explored how to find the day of the week and to properly format
                        our date output. I probably wound up coding about 40% of this project
                        with Braxton coding the other 60%.
-             Braxton -
+
+             Braxton - I learned how to make apps more interactive with the use of buttons to pull up
+                       the additional screen. I also learned more about event handlers and how to use them to
+                       call on different functions.  Overall I think this lab was useful in helping me
+                       improve the overall functionality and making the app more enjoyable for the
+                       user. I think me and Spencer were able to split the project pretty evenly and
+                       I would say it was basically 50/50 for the both of us.
+
    app name: Date App
    minSDK 21, targetSDK 31
    author(s): Spencer Parton and Braxton Elrod
